@@ -1,0 +1,55 @@
+:root {
+				--grow-time: 7s;
+				--fade-time: 3s;
+			}
+
+			body {
+				overflow: hidden;
+				/* padding-bottom: 80px; */
+				/* text-align: center; */
+			}
+
+			.circle {
+				animation: grow var(--grow-time) forwards, fade var(--fade-time) calc(var(--grow-time) - var(--fade-time)) forwards;
+				background: #81ecec;
+				border-radius: 40%;
+				height: 2px;
+				left: 20vw;
+				position: absolute;
+				top: 20vh;
+				transform: translateZ(0);
+				width: 2px;
+				
+				color: #ffffff;
+				font-family: 'Lato', sans-serif;
+				font-style: italic;
+				text-align: center;
+				font-size: 0.1px;
+				font-weight: 300;
+				box-sizing: border-box;
+			}
+
+			@keyframes grow {
+				from {
+					transform: translateZ(0px);
+					width: 2px;height: 2px;
+					font-size: 1px;
+				}
+
+				to {
+					transform: translateZ(1000px);
+					width: 300px;height: 300px;
+					font-size: 45px;
+					padding-top: 100px;
+				}
+			}
+
+			@keyframes fade {
+				from {
+					opacity: 1;
+				}
+
+				to {
+					opacity: 0;
+				}
+			}
